@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ bpm }} BPM</title>
+
+<style>
+
+body{
+    background-image: url("{{ url_for('static', filename = 'bg4.png') }}");
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 200px 200px;
+  }
+
+    a:link, a:visited {
+  background-color: rgb(156, 0, 0);
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+a:hover, a:active {
+  background-color: rgb(233, 16, 16);
+}
+</style>
+
+    </head>
+    
+    <body>
+        <center>
+        <h2>Accurate Tempo Calculated:</h2>
+        <h1>{{ bpm }} BPM</h1>
+        <a href="/">Calculate Again</a>
+    </center>
+    </body>
+</html>

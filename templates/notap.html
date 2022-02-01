@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>No Tap Detected</title>
+
+<style>
+
+body{
+    background-image: url("{{ url_for('static', filename = 'bg4.png') }}");
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 100px 100px;
+  }
+
+    a:link, a:visited {
+  background-color: rgb(156, 0, 0);
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+a:hover, a:active {
+  background-color: rgb(233, 16, 16);
+}
+</style>
+
+    </head>
+    
+    <body>
+        <center><br><br><br><br><br><br><br><br>
+        <h2>No Tap Was Detected</h2><br>
+        <a href="/">Try Again</a>
+    </center>
+    </body>
+</html>
