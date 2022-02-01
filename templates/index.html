@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TemPro - Accurate Tempo Tap Detector</title>
+    </head>
+
+<style>
+
+  body{
+    background-image: url("{{ url_for('static', filename = 'bg4.png') }}");
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 20px;
+  }
+  
+
+#calculate:link, a:visited {
+  background-color: rgb(156, 0, 0);
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+#calculate:hover, a:active {
+  background-color: rgb(233, 16, 16);
+}
+
+#t{
+  font-size: 45px;
+  background-color: blue;
+  color: white;
+  padding: 65px 95px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 30px;
+  border-width: 0px;
+  cursor: pointer;
+  box-shadow: 0 9px rgb(58, 58, 58);
+}
+
+#t:hover{
+  background-color: #0043fc;
+}
+
+#t:active{
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#box{
+  background-color: rgba(110, 108, 108, 0.6);
+  border-radius: 20px;
+  padding: 20px 20px;
+  width: 50%;
+}
+
+#footer{
+  position: absolute; 
+  bottom: 0;
+  background-color: black;
+  border-radius: 10px;
+  color: white;
+  padding: 1px 12px;
+}
+
+#footer:hover{
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(110, 108, 108, 0.7);
+  background-image: url("{{ url_for('static', filename = 'github.png') }}");
+  background-size: cover;
+  background-size: 150px 63px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  height: 110px
+}
+
+</style>
+
+<body>
+    <center><br><br><br><br><br>
+      <div id="box">
+    <h1>TemPro</h1>
+    <h3>Press space bar to tap & enter to calculate</h3>
+<br>
+    <form action="{{ url_for('index') }}" method="post">
+    <input type="submit" name="tap" value="⍝" id="t"> 
+    </form>
+<br><br>
+   <a href="/calculate" id="calculate">Calculate</a><p id="p"></p>
+  </div>
+</center>
+
+<a href="https://github.com/aryanbhajanka " target="_blank">
+<div id="footer">
+  <p>Developed by Aryan Bhajanka</p>
+</div>
+</a>
+</body>
+
+<script>
+
+    document.addEventListener("keypress", function(event) {
+
+      if (event.keyCode === 32) {
+       event.preventDefault();
+       document.getElementById("t").click();
+      }
+
+      if (event.keyCode === 13) {
+       event.preventDefault();
+       document.getElementById("calculate").click();
+      }
+
+    });
+
+</script>    
+
+</html>
